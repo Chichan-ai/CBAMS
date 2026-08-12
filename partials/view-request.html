@@ -1,0 +1,116 @@
+  <!-- ============ REQUEST VIEW ============ -->
+  <div class="view" id="view-request">
+    <div class="page-head">
+      <div class="page-title">Branch Status Request</div>
+      <div class="page-sub">Report a branch closure or reopening. Submitted requests are reviewed by an admin before the map and alert feed update.</div>
+    </div>
+
+    <div class="form-layout">
+      <div class="form-card">
+        <h2>New request</h2>
+        <div class="hint">Fields marked with the branch selector auto-fill the current recorded status.</div>
+
+        <form id="requestForm">
+          <div class="f-group">
+            <label for="reqBranch">Branch</label>
+            <select id="reqBranch" required>
+              <option value="" disabled selected>Select a branch…</option>
+            </select>
+            <div class="branch-preview" id="branchPreview"></div>
+          </div>
+
+          <div class="f-group">
+            <label>Requested action</label>
+            <div class="status-choice">
+              <label class="status-opt sel-closed" id="optClosed">
+                <input type="radio" name="reqStatus" value="closed">
+                <span class="so-label">Report Closed</span>
+              </label>
+              <label class="status-opt sel-open" id="optOpen">
+                <input type="radio" name="reqStatus" value="open">
+                <span class="so-label">Report Reopened</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="f-group" id="categoryGroup" style="display:none;">
+            <label for="reqCategory">Category</label>
+            <select id="reqCategory"></select>
+          </div>
+
+          <div class="f-group" id="newCategoryGroup" style="display:none;">
+            <label for="newCategoryInput">New category name</label>
+            <div class="cat-inline-add">
+              <input type="text" id="newCategoryInput" placeholder="e.g. Civil Unrest">
+              <button type="button" class="btn btn-ghost btn-sm" id="addCategoryBtn">Add</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="cancelCategoryBtn">Cancel</button>
+            </div>
+            <div class="f-help">Creates a new top-level category with its own subcategories.</div>
+          </div>
+
+          <div class="f-group" id="subcategoryGroup" style="display:none;">
+            <label for="reqSubcategory">Subcategory</label>
+            <select id="reqSubcategory"></select>
+          </div>
+
+          <div class="f-group" id="newSubcategoryGroup" style="display:none;">
+            <label for="newSubcategoryInput">New subcategory name</label>
+            <div class="cat-inline-add">
+              <input type="text" id="newSubcategoryInput" placeholder="e.g. Landslide">
+              <button type="button" class="btn btn-ghost btn-sm" id="addSubcategoryBtn">Add</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="cancelSubcategoryBtn">Cancel</button>
+            </div>
+            <div class="f-help">Adds a new subcategory under the selected category.</div>
+          </div>
+
+          <div class="f-row" style="display:flex; gap:12px; flex-wrap:wrap;">
+            <div class="f-group" id="closedFromGroup" style="display:none; flex:1; min-width:150px;">
+              <label for="reqClosedFrom">Closed from</label>
+              <input type="date" id="reqClosedFrom" min="">
+              <div class="f-help">The date the branch closure begins.</div>
+            </div>
+            <div class="f-group" id="closedFromTimeGroup" style="display:none; flex:0 0 130px;">
+              <label for="reqClosedFromTime">Time</label>
+              <input type="time" id="reqClosedFromTime" value="08:00">
+            </div>
+            <div class="f-group" id="closedUntilGroup" style="display:none; flex:1; min-width:150px;">
+              <label for="reqClosedUntil">Closed until</label>
+              <input type="date" id="reqClosedUntil" min="">
+              <div class="f-help">The branch will remain closed until this date.</div>
+              <div id="holidayIndicator" class="holiday-indicator" style="display:none;"></div>
+              <div id="holidayOverlap" class="holiday-overlap" style="display:none;"></div>
+              <div id="holidaySuggest" class="holiday-suggest" style="display:none;"></div>
+            </div>
+            <div class="f-group" id="closedUntilTimeGroup" style="display:none; flex:0 0 130px;">
+              <label for="reqClosedUntilTime">Time</label>
+              <input type="time" id="reqClosedUntilTime" value="15:00">
+            </div>
+          </div>
+
+          <div class="f-group">
+            <label for="reqReason">Details</label>
+            <textarea id="reqReason" placeholder="Describe what happened and any relevant context (LGU advisory, ETA to resume, etc.)" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit for approval</button>
+            <button type="reset" class="btn btn-ghost" id="reqResetBtn">Clear</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tips-card">
+        <h3>How approval works</h3>
+        <ul>
+          <li>Your request is queued under <b>Records → Approval</b> for an admin to review.</li>
+          <li>Once approved, the branch's map pin, status metrics, and the active alert feed update automatically — no page reload needed.</li>
+          <li>Rejected requests stay visible in <b>Archive</b> with the reviewer's note.</li>
+          <li>For life-safety emergencies, also call the regional hotline directly.</li>
+        </ul>
+        <div class="mini-track">
+          <h4>Your recent submissions</h4>
+          <div id="mySubmissions" class="req-list"><div class="empty">No submissions yet this session.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
