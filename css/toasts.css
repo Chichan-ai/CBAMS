@@ -1,0 +1,14 @@
+/* toasts.css — extracted from CBAMS index.html */
+
+  /* ===== Toasts ===== */
+  .toast-stack{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:8px;z-index:60;}
+  .toast{
+    background:#20242f;color:#fff;font-size:12px;font-weight:500;padding:12px 16px;border-radius:9px;
+    box-shadow:var(--shadow-lift);display:flex;align-items:center;gap:9px;min-width:240px;max-width:340px;
+    animation:toastIn .2s ease;
+  }
+  .toast .tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .toast.success .tdot{background:#4ade80;}
+  .toast.error .tdot{background:#f87171;}
+  .toast.info .tdot{background:#93c5fd;}
+  @keyframes toastIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}

@@ -1,0 +1,29 @@
+/* variables.css — extracted from CBAMS index.html */
+
+  :root{
+    --header:#4b4b58;
+    --bg:#eef1f6;
+    --card:#ffffff;
+    --ink:#1c1e21;
+    --muted:#6b7280;
+    --border:#e4e7ec;
+    --forest:#2e8b3f;
+    --open:#2e8b3f;
+    --closed:#c0392b;
+    --alert:#e0a800;
+    --f:'Inter', sans-serif;
+
+    /* ===== Login page palette ===== */
+    --login-green-900:#173D1E;
+    --login-green-800:#1F5C2B;
+    --login-green-700:#2A7A3B;
+    --login-green-600:#38924A;
+    --login-gold-500:#E8B62C;
+    --login-ink-900:#1E2621;
+    --login-ink-600:#5B6B60;
+    --login-ink-400:#8A978D;
+    --login-line:#DEDCD5;
+    --login-panel-bg:#F1EEE9;
+    --login-red-500:#D9455C;
+    --login-purple-500:#7B4FC9;
+  }

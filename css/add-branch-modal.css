@@ -1,0 +1,19 @@
+/* add-branch-modal.css — extracted from CBAMS index.html */
+
+  /* ===== Add Branch modal ===== */
+  .ab-modal{width:640px;}
+  .ab-modal-body{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;}
+  .ab-modal-body .f-group.full{grid-column:1 / -1;}
+  .ab-modal-body .f-group label{font-size:11.5px;font-weight:600;color:var(--ink);display:block;margin-bottom:4px;}
+  .ab-modal-body .f-group input,.ab-modal-body .f-group select{
+    width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:7px;font-size:12.5px;font-family:var(--f);
+  }
+  .directory-head-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .directory-head-row .directory-search{flex:1;margin-bottom:0;}
+
+  .alert-item{padding:9px 0;border-bottom:1px solid var(--border);cursor:pointer;}
+  .alert-item:last-child{border-bottom:none;}
+  .alert-item .a-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;}
+  .alert-item .a-meta{font-size:10.5px;color:var(--muted);margin-top:3px;}
+  .tag{font-size:9.5px;font-weight:600;color:var(--closed);}
+  .empty{font-size:11.5px;color:var(--muted);padding:6px 0;}
